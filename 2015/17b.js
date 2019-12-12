@@ -45,5 +45,4 @@ const o = c.reduce((output, cur) => {
     return output;
 }, {})
 
-const min = Object.keys(o).map(a => parseInt(a)).sort((a, b) => a - b)[0];
-console.log(o[min]);
+console.log(o[Object.keys(o).map(a => parseInt(a)).sort((a, b) => a - b)[0]]);
