@@ -21,14 +21,8 @@ function gen(sys) {
 }
 
 function gcd(a, b) {
-    let greater, lesser;
-    if (a > b) {
-        greater = a;
-        lesser = b;
-    } else {
-        greater = b;
-        lesser = a;
-    }
+    const greater = a > b ? a : b;
+    const lesser = a <= b ? a : b;
 
     const remainder = a % b;
     if (remainder == 0) {
