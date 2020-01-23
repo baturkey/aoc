@@ -10,8 +10,9 @@ const smultiply = (s, times) => {
         return s;
     }
 
-    const half = (times - times % 2) / 2;
-    return smultiply(s, half) + smultiply(s, half) + (times % 2 ? s : '');
+    const double = x => x + x;
+
+    return double(smultiply(s, (times - times % 2) / 2)) + (times % 2 ? s : '');
 }
 
 const fft = a => {
@@ -22,6 +23,4 @@ const fft = a => {
     return a;
 }
 
-const inputa = smultiply(input, 10000).split('').map(a => parseInt(a));
-
-console.log(repeat(fft, inputa, 100).slice(offset, offset + 8).join(''));
+console.log(repeat(fft, smultiply(input, 10000).split('').map(a => parseInt(a)), 100).slice(offset, offset + 8).join(''));

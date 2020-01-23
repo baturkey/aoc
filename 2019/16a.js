@@ -38,6 +38,4 @@ function fft(a) {
     return a;
 }
 
-const start = +new Date();
 console.log(r(fft, input, 100).slice(0, 8).join(''));
-console.log('done', +new Date() - start);
